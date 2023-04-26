@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Dongle:wght@700&family=Kaisei+HarunoUmi:wght@500&family=Merriweather:wght@900&family=Mulish:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Dongle:wght@700&family=Kaisei+HarunoUmi:wght@500&family=Lilita+One&family=Merriweather:wght@900&family=Mulish:wght@500&family=Titan+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="container1">
+        <!-- <div class="bubbles">
+            <span style="--i:11;"></span>
+            <span style="--i:1;"></span>
+            <span style="--i:2;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:23;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:16;"></span>
+            <span style="--i:19;"></span>
+            <span style="--i:20;"></span>
+            <span style="--i:25;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:21;"></span>
+            <span style="--i:15;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:26;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:28;"></span>
+            <span style="--i:11;"></span>
+            <span style="--i:1;"></span>
+            <span style="--i:2;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:23;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:16;"></span>
+            <span style="--i:19;"></span>
+            <span style="--i:20;"></span>
+            <span style="--i:25;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:21;"></span>
+            <span style="--i:15;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:26;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:28;"></span>
+        
+        </div> -->
+    </div>
+    <div class="card">
+        <div class="search">
+            <input type="text" id="bar" placeholder="Enter city name" spellcheck="false">
+            <button><img src="./images/search.png" alt=""></button>
+        </div>
+
+        <div class="error">
+            <p>Invalid city name</p>
+        </div>
+          <div class="weather">
+            <img src="./images/rain.png" alt="" class="weather-icon">
+            <h1 class="temp">22°C</h1>
+            <h2 class="city">New Delhi</h2>
+            <div class="details">
+                <div class="col">
+                    <img src="./images/humidity.png" alt="">
+                    <div>
+                        <p class="humidity">50%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="./images/wind.png" alt="">
+                    <div>
+                        <p class="wind">15km/h</p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </div>
+
+
+
+
+
+
+
+<script>
+   
+   const apikey = "f6a7ce3e55759db82b6e0f83fd24c7dc";
+   const apiurl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q="
+
+   const searchbox = document.querySelector(".search input");
+   const searchbtn = document.querySelector(".search button");
+   const weathericon = document.querySelector(".weather-icon");
+
+   async function checkweather(city) {
+    const response = await fetch(apiurl + city + `&appid=${apikey}`);
+
+    if(response.status ==404) {
+        document.querySelector(".error").style.display ="block"
+        document.querySelector(".weather").style.display ="none"
+    }else{
+
+    var data = await response.json();
+
+    document.querySelector(".city") .innerHTML = data.name;
+    document.querySelector(".temp") .innerHTML = Math.round(data.main.temp) + "°C";
+    document.querySelector(".humidity") .innerHTML = data.main.humidity + "%";
+    document.querySelector(".wind") .innerHTML = data.wind.speed + "km/h";
+
+    if(data.weather[0].main == "Clouds"){
+      weathericon.src = "images/clouds.png";
+    }
+    else if(data.weather[0].main == "Clear"){
+        weathericon.src = "images/clear.png";
+    }
+    else if(data.weather[0].main == "Rain"){
+        weathericon.src = "images/rain.png";
+    }
+    else if(data.weather[0].main == "Drizzle"){
+        weathericon.src = "images/drizzle.png";
+    }
+    else if(data.weather[0].main == "Mist"){
+        weathericon.src = "images/mist.png";
+    }
+    else if(data.weather[0].main == "Snow"){
+        weathericon.src = "images/snow.png";
+    }
+
+    document.querySelector(".weather").style.display = "block"
+    document.querySelector(".error").style.display ="none"
+   }
+
+   }
+   searchbtn.addEventListener("click" , ()=> {
+  checkweather(searchbox.value);
+   })
+
+</script>
+
+
+
+</body>
+</html>

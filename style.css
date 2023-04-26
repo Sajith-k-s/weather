@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lilita One', cursive;
+    box-sizing: border-box;
+}
+body{
+    background: #222;
+}
+.container1{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url(https://wallpaperaccess.com/full/24866.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+/* .bubbles{
+    position: relative;
+    display: flex;
+}
+.bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #4fc3dc;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44,0 0 50px #4fc3dc,
+    0 0 100px #4fc3dc;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+.bubbles span:nth-child(even) {
+    background: #ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544,
+    0 0 50px #ff2d75,
+    0 0 100px #ff2d75;
+}
+@keyframes animate {
+        0%
+        {
+            transform: translateY(100vh) scale(0);
+        }
+        100%
+        {
+            transform: translateY(-10vh) scale(1);
+        }
+} */
+.card{
+    width: 90%;
+    max-width: 470px;
+    background: linear-gradient(135deg,#00febacf,#5b548a);
+    color: #fff;
+    margin: 80px auto 0;
+    border-radius: 20px;
+    padding: 40px 35px;
+    text-align: center;
+    box-shadow: 4px 6px 8px;
+    border: 2px solid white;
+    position: relative;
+    bottom: 750px;
+}
+.search{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search input {
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    color: #555;
+    padding: 10px 25px;
+    height: 60px;
+    border-radius: 30px;
+    flex: 1;
+    margin-right: 16px;
+    font-size: 18px;
+}
+.search button {
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+.search button img {
+    width: 16px;
+}
+
+.weather-icon{
+      width: 170px;
+      margin-top: 30px;
+}
+
+.weather h1{
+    font-size: 80px;
+    font-weight: 500;
+}
+.weather h2 {
+    font-size: 45px;
+    font-weight: 500;
+    margin-top: -10px;
+}
+.details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 50px;
+}
+.col{
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+.col img {
+    width: 40px;
+    margin-right: 10px;
+}
+.humidity, .wind{
+    font-size: 28px;
+    margin-top: -6px;
+}
+.weather{
+    display: none;
+}
+.error{
+    text-align: center;
+    margin-left: 10px;
+    font-size: 22px;
+    margin-top: 18px;
+    display: none;
+}
