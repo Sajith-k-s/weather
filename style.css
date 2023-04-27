@@ -120,4 +120,10 @@ body{
     .humidity, .wind{
         font-size: 20px;
     }
+    .search input{
+        margin-right: 8px;
+    }
+    .search button{
+        width: 30px;
+    }
 }
