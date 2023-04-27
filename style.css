@@ -115,15 +115,10 @@ body{
         background: url(https://wallpaperaccess.com/full/24866.jpg);
     }
     .col img {
-        width: 20px;
+        width: 40px;
     }
     .humidity, .wind{
         font-size: 20px;
     }
-    .search input{
-        margin-right: 8px;
-    }
-    .search button{
-        width: 30px;
-    }
+    
 }
