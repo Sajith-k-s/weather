@@ -110,7 +110,7 @@ body{
     display: none;
 }
 
-@media screen and (min-width: 340px) and (max-width: 900px) and (orientation:portrait) {
+@media screen and (min-width: 300px) and (max-width: 900px) and (orientation:portrait) {
     body{
         background: url(https://wallpaperaccess.com/full/24866.jpg);
     }
