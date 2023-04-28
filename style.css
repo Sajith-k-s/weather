@@ -117,6 +117,9 @@ body{
     .card{
         zoom: 66%;
         margin-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     
 }
