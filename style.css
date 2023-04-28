@@ -122,7 +122,8 @@ body{
         font-size: 20px;
     }
     .card{
-        zoom: 70%;
+        zoom: 66%;
+        margin-bottom: 50px;
     }
     
 }
